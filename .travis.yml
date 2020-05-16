@@ -10,6 +10,10 @@ services:
 
 before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - gradle clean build
 
 script:
-  - gradle clean build
+  - docker build -t bhoopendra/social-media-api .
+
+after_success:
+  - docker push bhoopendra/social-media-api
