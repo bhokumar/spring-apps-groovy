@@ -1,0 +1,16 @@
+# We use Groovy
+language: groovy
+
+jdk:
+  - openjdk8
+
+services:
+  - docker
+
+before_install:
+  - gradle clean
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker pull bhoopendra/alpine-java
+
+script:
+  - gradle clean install
