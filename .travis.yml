@@ -10,7 +10,6 @@ services:
 before_install:
   - gradle clean
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker pull "$DOCKER_ID"/alpine-java:latest
 
 script:
   - gradle clean install
