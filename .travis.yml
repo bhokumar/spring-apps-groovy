@@ -13,4 +13,4 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 script:
-  - gradle clean install
+  - gradle build
