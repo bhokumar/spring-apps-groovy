@@ -9,8 +9,7 @@ services:
   - docker
 
 before_install:
-  - gradle clean
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 script:
-  - gradle build
+  - gradle clean build
