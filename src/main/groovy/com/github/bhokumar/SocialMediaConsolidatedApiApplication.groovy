@@ -8,6 +8,7 @@ class SocialMediaConsolidatedApiApplication {
 
 	static void main(String[] args) {
 		SpringApplication.run(SocialMediaConsolidatedApiApplication, args)
+        println "Bhoopendra"
 	}
 
 }
